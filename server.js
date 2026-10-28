@@ -7,6 +7,7 @@ const { createDrop } = require('./drop');
 const { saveDrop, getDrop } = require('./store');
 const { unlockStoredDrop } = require('./service');
 const { createInvoice } = require('./invoice');
+const { getPaymentsForDrop } = require('./verifier');
 
 const HOST = '127.0.0.1';
 const PORT = Number(process.env.PORT || 3000);
@@ -130,18 +131,28 @@ const server = http.createServer(async (req, res) => {
 
   if (req.method === 'POST' && unlockMatch) {
     try {
-      if (process.env.ALLOW_SIMULATED_PAYMENTS !== '1') {
-        sendJson(res, 503, {
-          error: 'Payment verification backend is not configured.'
+      const id = unlockMatch[1];
+      const drop = getDrop(id);
+
+      if (!drop) {
+        sendJson(res, 404, {
+          error: 'Drop not found.'
         });
         return;
       }
 
-      const body = await readJson(req);
+      let payments;
+
+      if (process.env.ALLOW_SIMULATED_PAYMENTS === '1') {
+        const body = await readJson(req);
+        payments = body.payments;
+      } else {
+        payments = await getPaymentsForDrop(drop);
+      }
 
       const result = unlockStoredDrop({
-        id: unlockMatch[1],
-        payments: body.payments,
+        id,
+        payments,
         requiredConfirmations: 3
       });
 
@@ -150,6 +161,7 @@ const server = http.createServer(async (req, res) => {
       const status =
         error.message === 'Drop not found.' ? 404 :
         error.message === 'Drop has already been burned.' ? 410 :
+        error.message === 'Payment verification backend is not configured.' ? 503 :
         400;
 
       sendJson(res, status, {

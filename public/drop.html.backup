@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CipherDrop — Private payment gate</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      color-scheme: dark;
+      --bg:#070707; --panel:#101010; --line:#292929;
+      --text:#f5f5f5; --muted:#999; --accent:#f4b728;
+    }
+    body {
+      margin:0; min-height:100vh; background:var(--bg); color:var(--text);
+      font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    main { width:min(760px,calc(100% - 32px)); margin:auto; padding:64px 0; }
+    .brand { font-size:20px; font-weight:800; letter-spacing:-.03em; }
+    .brand span,.amount { color:var(--accent); }
+    h1 { margin:64px 0 12px; font-size:clamp(38px,7vw,64px); letter-spacing:-.05em; line-height:1; }
+    .lead { color:var(--muted); margin:0 0 36px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:28px; }
+    .badge {
+      display:inline-block; border:1px solid var(--line); border-radius:999px;
+      padding:5px 10px; color:#bbb; font-size:12px; text-transform:uppercase;
+    }
+    .row { margin-top:24px; }
+    .label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px; }
+    .value { font-size:18px; font-weight:700; overflow-wrap:anywhere; }
+    .amount { font-size:32px; }
+    code {
+      display:block; padding:12px; border:1px solid var(--line);
+      border-radius:9px; background:#080808; overflow-wrap:anywhere; color:#ddd;
+    }
+    button {
+      margin-top:10px; border:1px solid var(--line); border-radius:9px;
+      padding:9px 12px; background:#181818; color:#eee; cursor:pointer;
+    }
+    .status {
+      margin-top:28px; padding:18px; border:1px solid var(--line);
+      border-radius:12px; background:#0a0a0a;
+    }
+    .dot {
+      display:inline-block; width:8px; height:8px; border-radius:50%;
+      background:var(--accent); margin-right:8px;
+    }
+    .small { color:var(--muted); font-size:13px; margin-top:8px; }
+    .error { color:#ff8d8d; }
+    a { color:var(--text); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">Cipher<span>Drop</span></div>
+
+    <h1>Encrypted drop.</h1>
+    <p class="lead">Complete the shielded Zcash payment to unlock the protected content.</p>
+
+    <section id="card" class="card">
+      <div id="loading">Loading payment request...</div>
+    </section>
+
+    <p class="small">
+      No buyer account, email, or identity required.
+    </p>
+  </main>
+
+  <script>
+    const card = document.querySelector('#card');
+    const id = location.pathname.split('/').filter(Boolean).pop();
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    async function copyText(value, button) {
+      await navigator.clipboard.writeText(value);
+      const old = button.textContent;
+      button.textContent = 'Copied';
+      setTimeout(() => button.textContent = old, 1200);
+    }
+
+    async function loadDrop() {
+      try {
+        const response = await fetch('/api/drops/' + encodeURIComponent(id));
+        const body = await response.json();
+
+        if (!response.ok) {
+          throw new Error(body.error || 'Unable to load drop.');
+        }
+
+        const drop = body.drop;
+        const invoice = body.invoice;
+
+        card.innerHTML = `
+          <span class="badge">${escapeHtml(invoice.network)}</span>
+
+          <div class="row">
+            <div class="label">Amount</div>
+            <div class="value amount">${escapeHtml(invoice.amount)} ZEC</div>
+          </div>
+
+          <div class="row">
+            <div class="label">Shielded receiver</div>
+            <code id="address">${escapeHtml(invoice.address)}</code>
+            <button id="copy-address">Copy address</button>
+          </div>
+
+          <div class="row">
+            <div class="label">Payment memo</div>
+            <code id="memo">${escapeHtml(invoice.memo)}</code>
+            <button id="copy-memo">Copy memo</button>
+          </div>
+
+          <div class="row">
+            <div class="label">ZIP-321 payment request</div>
+            <code id="uri">${escapeHtml(invoice.uri)}</code>
+            <button id="copy-uri">Copy payment request</button>
+          </div>
+
+          <div class="status">
+            <span class="dot"></span>
+            <strong>Waiting for payment verification</strong>
+            <div class="small">
+              CipherDrop will release the decryption key only after the backend verifies the required payment and confirmations.
+            </div>
+          </div>
+
+          <div class="small">
+            Burn after unlock: ${drop.burnAfterUnlock ? 'enabled' : 'disabled'}
+          </div>
+        `;
+
+        document.querySelector('#copy-address').onclick =
+          (event) => copyText(invoice.address, event.currentTarget);
+
+        document.querySelector('#copy-memo').onclick =
+          (event) => copyText(invoice.memo, event.currentTarget);
+
+        document.querySelector('#copy-uri').onclick =
+          (event) => copyText(invoice.uri, event.currentTarget);
+      } catch (error) {
+        card.innerHTML =
+          '<div class="error">' + escapeHtml(error.message) + '</div>';
+      }
+    }
+
+    loadDrop();
+  </script>
+</body>
+</html>
