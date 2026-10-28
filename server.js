@@ -7,6 +7,7 @@ const { createDrop } = require('./drop');
 const { saveDrop, getDrop } = require('./store');
 const { unlockStoredDrop } = require('./service');
 const { createInvoice } = require('./invoice');
+const QRCode = require('qrcode');
 const { getPaymentsForDrop } = require('./verifier');
 
 const HOST = '127.0.0.1';
@@ -112,10 +113,18 @@ const server = http.createServer(async (req, res) => {
 
     try {
       const invoice = createInvoice(drop);
+      const qrDataUrl = await QRCode.toDataURL(invoice.uri, {
+        errorCorrectionLevel: 'M',
+        margin: 2,
+        width: 320
+      });
 
       sendJson(res, 200, {
         drop,
-        invoice
+        invoice: {
+          ...invoice,
+          qrDataUrl
+        }
       });
     } catch (error) {
       sendJson(res, 503, {

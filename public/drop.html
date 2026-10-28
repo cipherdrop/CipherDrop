@@ -11,17 +11,17 @@
     * { box-sizing: border-box; }
 
     :root {
-      --bg: #0b0f14;
-      --panel: #111827;
-      --green: #F0A94B;
-      --green-soft: #FFD18A;
-      --green-dim: #334155;
+      --bg: #080A0D;
+      --panel: #0E1217;
+      --green: #F4B942;
+      --green-soft: #FFD978;
+      --green-dim: #454B53;
       --line: rgba(0,255,65,.28);
       --line-soft: rgba(0,255,65,.12);
-      --text: #eef5f0;
-      --muted: #e0e6e1;
-      --dim: #b9c3bb;
-      --danger: #ff7474;
+      --text: #F1F3F5;
+      --muted: #A9B0B7;
+      --dim: #A9B0B7;
+      --danger: #FB7185;
     }
 
     html {
@@ -179,7 +179,7 @@
 
     h1 {
       margin: 0;
-      color: #f2f6f3;
+      color: #F1F3F5;
       font-family: Arial, Helvetica, sans-serif;
       font-size: clamp(34px,5vw,54px);
       line-height: .94;
@@ -193,16 +193,24 @@
     }
 
     .hero-copy {
-      color: var(--muted);
+      align-self: end;
+      max-width: 320px;
+      padding: 4px 0 4px 22px;
+      border-left: 1px solid var(--line);
+      color: #A9B0B7;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
       font-size: 13px;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .hero-code {
       display: block;
-      margin-bottom: 7px;
-      color: var(--green);
-      font-size: 13px;
+      margin-bottom: 12px;
+      color: #F4B942;
+      font-family: "Courier New", monospace;
+      font-size: 11px;
+      line-height: 1.5;
+      letter-spacing: .4px;
       text-transform: uppercase;
     }
 
@@ -371,7 +379,7 @@
       padding: 11px 12px;
       border: 1px solid var(--line);
       background: rgba(0,4,1,.88);
-      color: #b9c8bc;
+      color: #A9B0B7;
       font-family: "Courier New", Courier, monospace;
       font-size: 13px;
       line-height: 1.5;
@@ -395,7 +403,7 @@
 
     .copy:hover {
       background: var(--green);
-      color: #001604;
+      color: #080A0D;
     }
 
     /* STATUS */
@@ -548,8 +556,8 @@
   
 /* CIPHERDROP READABILITY FIX V2 */
 html, body {
-  background: #080b10 !important;
-  color: #f8fafc !important;
+  background: #080A0D !important;
+  color: #F1F3F5 !important;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -559,100 +567,100 @@ body {
   line-height: 1.65 !important;
 }
 p, li, label, small, input, textarea, select {
-  color: #e2e8f0 !important;
+  color: #F1F3F5 !important;
   font-size: 15px !important;
   line-height: 1.65 !important;
   opacity: 1 !important;
 }
 h1, h2, h3, h4, strong, b, legend {
-  color: #ffffff !important;
+  color: #F1F3F5 !important;
   opacity: 1 !important;
 }
 code, pre, .mono, .address, .memo {
-  color: #e2e8f0 !important;
+  color: #F1F3F5 !important;
   overflow-wrap: anywhere;
 }
 section, article, fieldset, .card, .panel, .invoice,
 .payment-card, .drop-card, .surface {
-  background: #101722 !important;
-  border-color: #334155 !important;
+  background: #0E1217 !important;
+  border-color: #454B53 !important;
   box-shadow: none !important;
 }
 input, textarea, select {
-  background: #0b1220 !important;
-  border: 1px solid #64748b !important;
+  background: #0E1217 !important;
+  border: 1px solid #656D77 !important;
   border-radius: 3px;
 }
 input::placeholder, textarea::placeholder {
-  color: #b6c2d2 !important;
+  color: #A9B0B7 !important;
   opacity: 1 !important;
 }
 a, .green, .status, .amount, .accent {
-  color: #F0A94B !important;
+  color: #F4B942 !important;
 }
 button, .btn, input[type="submit"], input[type="button"] {
-  background: #F0A94B !important;
-  color: #ffffff !important;
-  border: 1px solid #F0A94B !important;
+  background: #F4B942 !important;
+  color: #F1F3F5 !important;
+  border: 1px solid #F4B942 !important;
   box-shadow: none !important;
   text-shadow: none !important;
   font-size: 14px !important;
 }
 :focus-visible {
-  outline: 3px solid #FFD18A !important;
+  outline: 3px solid #FFD978 !important;
   outline-offset: 3px !important;
 }
 
 
 /* CIPHERDROP WILDCARD OBSIDIAN AMBER */
 html, body {
-  background: #0B0D0F !important;
-  color: #E8EAED !important;
+  background: #080A0D !important;
+  color: #F1F3F5 !important;
 }
 body {
   font-family: "Segoe UI", Arial, sans-serif !important;
   line-height: 1.65 !important;
 }
 h1, h2, h3, h4, strong, b, legend {
-  color: #F5F5F4 !important;
+  color: #F1F3F5 !important;
   opacity: 1 !important;
 }
 p, li, label, small, code, pre {
-  color: #C4CBD3 !important;
+  color: #A9B0B7 !important;
   opacity: 1 !important;
 }
 section, article, fieldset, .card, .panel, .invoice,
 .payment-card, .drop-card, .surface {
-  background: #171A1E !important;
+  background: #0E1217 !important;
   background-image: none !important;
   border-color: #454B53 !important;
   box-shadow: none !important;
 }
 input, textarea, select {
-  background: #101215 !important;
-  color: #F5F5F4 !important;
+  background: #0E1217 !important;
+  color: #F1F3F5 !important;
   border: 1px solid #656D77 !important;
 }
 input::placeholder, textarea::placeholder {
-  color: #AEB6C0 !important;
+  color: #A9B0B7 !important;
   opacity: 1 !important;
 }
 a, .green, .status, .amount, .accent {
-  color: #F0A94B !important;
+  color: #F4B942 !important;
 }
 button, .btn, input[type="submit"], input[type="button"] {
-  background: #F0A94B !important;
-  color: #17120A !important;
-  border: 1px solid #FFD18A !important;
+  background: #F4B942 !important;
+  color: #0E1217 !important;
+  border: 1px solid #FFD978 !important;
   box-shadow: none !important;
   text-shadow: none !important;
   font-weight: 700 !important;
 }
 button:hover, .btn:hover {
-  background: #FFD18A !important;
+  background: #FFD978 !important;
 }
 :focus-visible {
-  outline: 3px solid #FFD18A !important;
+  outline: 3px solid #FFD978 !important;
   outline-offset: 3px !important;
 }
 body * {
@@ -662,70 +670,70 @@ body * {
 }
 
 
-/* CIPHERDROP WILDCARD — REMOVE #F0A94B ACCENTS */
+/* CIPHERDROP WILDCARD — REMOVE #F4B942 ACCENTS */
 :root {
-  --#F0A94B: #F0A94B;
-  --accent: #F0A94B;
+  --#F4B942: #F4B942;
+  --accent: #F4B942;
 }
 h1 span, h2 span, h3 span,
 a, .status, .amount, .accent,
 .label, .step-number, .section-label {
-  color: #F0A94B !important;
+  color: #F4B942 !important;
 }
 header, nav, .topbar {
   border-color: #454B53 !important;
 }
 .status::before, .status-dot, .dot {
-  background-color: #F0A94B !important;
+  background-color: #F4B942 !important;
   box-shadow: none !important;
 }
 button, .btn, input[type="submit"], input[type="button"] {
-  background: #F0A94B !important;
-  border-color: #FFD18A !important;
-  color: #17120A !important;
+  background: #F4B942 !important;
+  border-color: #FFD978 !important;
+  color: #0E1217 !important;
 }
 :focus-visible {
-  outline-color: #FFD18A !important;
+  outline-color: #FFD978 !important;
 }
 
 
-/* CIPHERDROP — NO #F0A94B */
-html, body { color: #E8EAED !important; }
+/* CIPHERDROP — NO #F4B942 */
+html, body { color: #F1F3F5 !important; }
 h1, h2, h3, h4, strong, b, legend {
-  color: #F5F5F4 !important;
+  color: #F1F3F5 !important;
 }
 a, .status, .amount, .accent, .label, .step-number,
 .section-label, .subtitle, .green {
-  color: #F0A94B !important;
+  color: #F4B942 !important;
 }
 .status::before, .status-dot, .dot {
-  background: #F0A94B !important;
+  background: #F4B942 !important;
   box-shadow: none !important;
 }
 button, .btn, input[type="submit"], input[type="button"] {
-  background: #F0A94B !important;
-  border-color: #FFD18A !important;
-  color: #17120A !important;
+  background: #F4B942 !important;
+  border-color: #FFD978 !important;
+  color: #0E1217 !important;
 }
 input, textarea, select {
-  color: #F5F5F4 !important;
+  color: #F1F3F5 !important;
   border-color: #656D77 !important;
 }
-:focus-visible { outline-color: #FFD18A !important; }
+:focus-visible { outline-color: #FFD978 !important; }
 
 
 /* CIPHERDROP COLORFUL WILDCARD */
 :root {
-  --cd-amber: #FFB84D;
-  --cd-purple: #C084FC;
-  --cd-teal: #5EEAD4;
+  --cd-amber: #F4B942;
+  --cd-purple: #F4B942;
+  --cd-teal: #F4B942;
   --cd-pink: #FB7185;
 }
 html, body {
-  background: #0B0D12 !important;
-  color: #F5F5F5 !important;
+  background: #080A0D !important;
+  color: #F1F3F5 !important;
 }
-h1 { color: #F8FAFC !important; }
+h1 { color: #F1F3F5 !important; }
 h1 span, .amount, .step-number {
   color: var(--cd-amber) !important;
 }
@@ -740,36 +748,36 @@ a, .accent, .section-label {
   box-shadow: none !important;
 }
 button, .btn, input[type="submit"], input[type="button"] {
-  background: linear-gradient(110deg, #FFB84D, #FB7185) !important;
-  color: #17120A !important;
-  border: 1px solid #FFD6A0 !important;
+  background: linear-gradient(110deg, #F4B942, #FB7185) !important;
+  color: #0E1217 !important;
+  border: 1px solid #FFD978 !important;
   box-shadow: none !important;
 }
 section, article, fieldset, .card, .panel, .invoice,
 .payment-card, .drop-card, .surface {
-  background-color: #171A22 !important;
-  border-color: #454052 !important;
+  background-color: #0E1217 !important;
+  border-color: #454B53 !important;
   box-shadow: none !important;
 }
 input, textarea, select {
-  background: #0D1018 !important;
-  color: #F5F5F5 !important;
-  border-color: #75658B !important;
+  background: #0E1217 !important;
+  color: #F1F3F5 !important;
+  border-color: #656D77 !important;
 }
 
 
 /* CIPHERDROP COLORFUL — PURPLE TEAL PINK */
 :root {
-  --cd-purple: #C084FC;
-  --cd-teal: #5EEAD4;
+  --cd-purple: #F4B942;
+  --cd-teal: #F4B942;
   --cd-pink: #FB7185;
 }
 html, body {
-  background: #0B0D12 !important;
-  color: #F5F5F5 !important;
+  background: #080A0D !important;
+  color: #F1F3F5 !important;
 }
 h1, h2, h3, h4, strong, b, legend {
-  color: #F5F5F5 !important;
+  color: #F1F3F5 !important;
 }
 h1 span, .amount, .step-number {
   color: var(--cd-purple) !important;
@@ -785,41 +793,41 @@ a, .accent, .section-label {
   box-shadow: none !important;
 }
 button, .btn, input[type="submit"], input[type="button"] {
-  background: linear-gradient(110deg, #C084FC, #FB7185) !important;
-  color: #130D1A !important;
-  border: 1px solid #E9B8FF !important;
+  background: linear-gradient(110deg, #F4B942, #FB7185) !important;
+  color: #0E1217 !important;
+  border: 1px solid #FFD978 !important;
   box-shadow: none !important;
 }
 section, article, fieldset, .card, .panel, .invoice,
 .payment-card, .drop-card, .surface {
-  background-color: #171A22 !important;
-  border-color: #454052 !important;
+  background-color: #0E1217 !important;
+  border-color: #454B53 !important;
   box-shadow: none !important;
 }
 input, textarea, select {
-  background: #0D1018 !important;
-  color: #F5F5F5 !important;
-  border-color: #75658B !important;
+  background: #0E1217 !important;
+  color: #F1F3F5 !important;
+  border-color: #656D77 !important;
 }
 
 
 /* CIPHERDROP RETRO UNDERGROUND THEME */
 :root {
   color-scheme: dark;
-  --bg: #17110E;
-  --panel: #211812;
-  --green: #D77B43;
-  --green-soft: #E7A16C;
-  --green-dim: #68432F;
-  --text: #F2E7D2;
-  --muted: #D0BEA6;
-  --dim: #A8957E;
-  --danger: #D96B5F;
+  --bg: #0E1217;
+  --panel: #0E1217;
+  --green: #F4B942;
+  --green-soft: #F4B942;
+  --green-dim: #656D77;
+  --text: #F1F3F5;
+  --muted: #A9B0B7;
+  --dim: #A9B0B7;
+  --danger: #FB7185;
 }
 html, body {
-  background: #17110E !important;
+  background: #0E1217 !important;
   background-image: none !important;
-  color: #F2E7D2 !important;
+  color: #F1F3F5 !important;
   font-family: "Courier New", monospace !important;
   font-size: 15px !important;
   line-height: 1.65 !important;
@@ -827,37 +835,37 @@ html, body {
 }
 body {
   background-image:
-    linear-gradient(#2A1D16 1px, transparent 1px),
-    linear-gradient(90deg, #2A1D16 1px, transparent 1px) !important;
+    linear-gradient(#0E1217 1px, transparent 1px),
+    linear-gradient(90deg, #0E1217 1px, transparent 1px) !important;
   background-size: 24px 24px !important;
 }
 h1, h2, h3, h4 {
-  color: #F2E7D2 !important;
+  color: #F1F3F5 !important;
   font-family: Impact, "Arial Black", sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: -0.035em !important;
   text-shadow: none !important;
 }
 p, li, label, small, legend, strong, b {
-  color: #D0BEA6 !important;
+  color: #A9B0B7 !important;
   opacity: 1 !important;
 }
 a, .accent, .status, .amount, .step-number,
 .section-label, .subtitle, .green {
-  color: #E7A16C !important;
+  color: #F4B942 !important;
 }
 section, article, fieldset, .card, .panel, .invoice,
 .payment-card, .drop-card, .surface {
-  background: #211812 !important;
+  background: #0E1217 !important;
   background-image: none !important;
-  border: 1px solid #68432F !important;
+  border: 1px solid #656D77 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 input, textarea, select, pre, code {
-  background: #120D0A !important;
-  color: #F2E7D2 !important;
-  border: 1px solid #68432F !important;
+  background: #0E1217 !important;
+  color: #F1F3F5 !important;
+  border: 1px solid #656D77 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   font-family: "Courier New", monospace !important;
@@ -867,14 +875,14 @@ input, textarea, select, pre, code {
   opacity: 1 !important;
 }
 input::placeholder, textarea::placeholder {
-  color: #A8957E !important;
+  color: #A9B0B7 !important;
   opacity: 1 !important;
 }
 button, .btn, input[type="submit"], input[type="button"],
 button.primary, a.button {
-  background: #D77B43 !important;
-  color: #17110E !important;
-  border: 2px solid #E7A16C !important;
+  background: #F4B942 !important;
+  color: #0E1217 !important;
+  border: 2px solid #F4B942 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   text-shadow: none !important;
@@ -883,14 +891,14 @@ button.primary, a.button {
   text-transform: uppercase;
 }
 button:hover, .btn:hover, a.button:hover {
-  background: #E7A16C !important;
-  color: #17110E !important;
+  background: #F4B942 !important;
+  color: #0E1217 !important;
 }
 hr {
-  border-color: #68432F !important;
+  border-color: #656D77 !important;
 }
 :focus-visible {
-  outline: 2px solid #E7A16C !important;
+  outline: 2px solid #F4B942 !important;
   outline-offset: 3px !important;
 }
 body * {
@@ -902,9 +910,9 @@ body * {
 
 /* CIPHERDROP RETRO POLISH */
 html, body {
-  background: #17110E !important;
+  background: #0E1217 !important;
   background-image: none !important;
-  color: #F2E7D2 !important;
+  color: #F1F3F5 !important;
   font-family: "Courier New", monospace !important;
   font-size: 15px !important;
   line-height: 1.65 !important;
@@ -920,34 +928,34 @@ h1, h2, h3, h4 {
   font-weight: 900 !important;
   letter-spacing: -0.04em !important;
   line-height: 1.02 !important;
-  color: #F2E7D2 !important;
+  color: #F1F3F5 !important;
   text-shadow: none !important;
   transform: none !important;
 }
 h1 { font-size: clamp(32px, 4vw, 54px) !important; }
 h1 span, h2 span, .amount, .step-number {
-  color: #D77B43 !important;
+  color: #F4B942 !important;
 }
 p, li, label, small, legend, strong, b {
-  color: #D0BEA6 !important;
+  color: #A9B0B7 !important;
   opacity: 1 !important;
 }
 a, .accent, .status, .section-label, .subtitle, .green,
 [class*="status"], [class*="step"] {
-  color: #D77B43 !important;
+  color: #F4B942 !important;
 }
 section, article, fieldset, .card, .panel, .invoice,
 .payment-card, .drop-card, .surface {
-  background: #2A1C15 !important;
+  background: #0E1217 !important;
   background-image: none !important;
-  border-color: #68432F !important;
+  border-color: #656D77 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 input, textarea, select, pre, code {
-  background: #120D0A !important;
-  color: #F2E7D2 !important;
-  border: 1px solid #68432F !important;
+  background: #0E1217 !important;
+  color: #F1F3F5 !important;
+  border: 1px solid #656D77 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   font-family: "Courier New", monospace !important;
@@ -956,14 +964,14 @@ input, textarea, select, pre, code {
   overflow-wrap: anywhere;
 }
 input::placeholder, textarea::placeholder {
-  color: #A8957E !important;
+  color: #A9B0B7 !important;
   opacity: 1 !important;
 }
 button, .btn, input[type="submit"], input[type="button"],
 button.primary, a.button {
-  background: #D77B43 !important;
-  color: #17110E !important;
-  border: 2px solid #E7A16C !important;
+  background: #F4B942 !important;
+  color: #0E1217 !important;
+  border: 2px solid #F4B942 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   text-shadow: none !important;
@@ -972,14 +980,14 @@ button.primary, a.button {
   font-weight: 900 !important;
 }
 button:hover, .btn:hover, a.button:hover {
-  background: #E7A16C !important;
-  color: #17110E !important;
+  background: #F4B942 !important;
+  color: #0E1217 !important;
 }
 hr {
-  border-color: #68432F !important;
+  border-color: #656D77 !important;
 }
 :focus-visible {
-  outline: 2px solid #E7A16C !important;
+  outline: 2px solid #F4B942 !important;
   outline-offset: 3px !important;
 }
 body * {
@@ -1061,13 +1069,8 @@ h1 {
       </h1>
 
       <div class="hero-copy">
-        <span class="hero-code">
-          // shielded payment required
-        </span>
-
-        Complete the shielded Zcash payment.
-        CipherDrop releases access only after
-        payment verification.
+        <span class="hero-code">// SHIELDED PAYMENT REQUIRED</span>
+        <div class="hero-description">Complete the <strong>shielded Zcash payment</strong>. CipherDrop releases access only after payment verification.</div>
       </div>
     </section>
 
@@ -1181,6 +1184,27 @@ h1 {
 
             <div class="amount-panel">
 
+              <div style="text-align:center;margin-bottom:24px">
+                <img
+                  src="${escapeHtml(invoice.qrDataUrl)}"
+                  alt="ZIP-321 Zcash payment QR code"
+                  width="220"
+                  height="220"
+                  style="
+                    display:block;
+                    width:220px;
+                    height:220px;
+                    max-width:100%;
+                    margin:0 auto;
+                    background:#fff;
+                    padding:8px;
+                  "
+                >
+                <div class="small" style="margin-top:10px">
+                  Scan with a compatible Zcash wallet
+                </div>
+              </div>
+
               <div class="label">
                 Required amount
               </div>
@@ -1208,6 +1232,27 @@ h1 {
             </div>
 
             <div class="payment-details">
+
+              <div class="row">
+                <div class="label">
+                  Share encrypted drop
+                </div>
+
+                <code id="share-url"></code>
+
+                <button
+                  id="copy-share"
+                  class="copy"
+                  type="button"
+                >
+                  Copy share link
+                </button>
+
+                <div class="small" style="margin-top:8px">
+                  Share this link with the recipient.
+                  It contains no plaintext secret or decryption key.
+                </div>
+              </div>
 
               <div class="row">
                 <div class="label">
@@ -1281,6 +1326,16 @@ h1 {
           </div>
         `;
 
+        const shareUrl = location.href;
+        document.querySelector('#share-url').textContent = shareUrl;
+
+        document.querySelector('#copy-share').onclick =
+          (event) =>
+            copyText(
+              shareUrl,
+              event.currentTarget
+            );
+
         document.querySelector('#copy-address').onclick =
           (event) =>
             copyText(
@@ -1302,6 +1357,132 @@ h1 {
               event.currentTarget
             );
 
+        const unlockButton = document.createElement('button');
+        unlockButton.type = 'button';
+        unlockButton.className = 'copy';
+        unlockButton.textContent = 'VERIFY PAYMENT / UNLOCK';
+        unlockButton.style.marginTop = '16px';
+
+        const unlockOutput = document.createElement('div');
+        unlockOutput.className = 'status';
+        unlockOutput.style.marginTop = '12px';
+
+        document.querySelector('.payment-details')
+          .append(unlockButton, unlockOutput);
+
+        async function decryptSecret(keyBase64) {
+          const fromBase64 = (value) => {
+            const normalized = String(value)
+              .replace(/-/g, '+')
+              .replace(/_/g, '/');
+
+            const padded =
+              normalized + '='.repeat((4 - normalized.length % 4) % 4);
+
+            return Uint8Array.from(
+              atob(padded),
+              c => c.charCodeAt(0)
+            );
+          };
+
+          const key = await crypto.subtle.importKey(
+            'raw',
+            fromBase64(keyBase64),
+            { name: 'AES-GCM' },
+            false,
+            ['decrypt']
+          );
+
+          const ciphertext = fromBase64(drop.ciphertext);
+          const tag = fromBase64(drop.tag);
+          const encrypted =
+            new Uint8Array(ciphertext.length + tag.length);
+
+          encrypted.set(ciphertext);
+          encrypted.set(tag, ciphertext.length);
+
+          const plaintext = await crypto.subtle.decrypt(
+            {
+              name: 'AES-GCM',
+              iv: fromBase64(drop.iv),
+              tagLength: 128
+            },
+            key,
+            encrypted
+          );
+
+          return new TextDecoder().decode(plaintext);
+        }
+
+        unlockButton.onclick = async () => {
+          unlockButton.disabled = true;
+          unlockButton.textContent = 'VERIFYING PAYMENT...';
+          unlockOutput.textContent = '';
+
+          try {
+            const response = await fetch(
+              '/api/drops/' + encodeURIComponent(id) + '/unlock',
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  payments: [{
+                    amount: invoice.amount,
+                    memo: invoice.memo,
+                    confirmations: 3
+                  }]
+                })
+              }
+            );
+
+            const result = await response.json();
+
+            if (!response.ok) {
+              throw new Error(
+                result.error || 'Unable to unlock drop.'
+              );
+            }
+
+            if (!result.unlocked) {
+              unlockOutput.textContent =
+                '> PAYMENT STATUS: ' +
+                String(result.status).toUpperCase();
+
+              unlockButton.disabled = false;
+              unlockButton.textContent =
+                'VERIFY PAYMENT / UNLOCK';
+              return;
+            }
+
+            const secret = await decryptSecret(result.key);
+
+            unlockOutput.innerHTML =
+              '<div>&gt; PAYMENT VERIFIED</div>' +
+              '<div>&gt; DECRYPTION KEY RELEASED</div>' +
+              '<div style="margin-top:14px">Decrypted secret</div>' +
+              '<code style="display:block;white-space:pre-wrap;' +
+              'word-break:break-word;margin-top:8px;padding:14px">' +
+              escapeHtml(secret) +
+              '</code>' +
+              '<div style="margin-top:12px">&gt; ' +
+              (drop.burnAfterUnlock
+                ? 'DROP BURNED AFTER UNLOCK'
+                : 'DROP REMAINS AVAILABLE') +
+              '</div>';
+
+            unlockButton.textContent = 'UNLOCKED';
+          } catch (error) {
+            unlockOutput.textContent =
+              '> ERROR: ' + error.message;
+
+            unlockButton.disabled = false;
+            unlockButton.textContent =
+              'VERIFY PAYMENT / UNLOCK';
+          }
+        };
+
       } catch (error) {
         card.innerHTML =
           '<div class="error">&gt; ERROR: ' +
@@ -1314,3 +1495,57 @@ h1 {
   </script>
 
 </body>
+
+<style>
+/* Payment hero vertical alignment */
+</style>
+
+<style>
+/* Match homepage Font 1 exactly */
+.hero h1,
+.hero h1 span {
+  font-family: "Trebuchet MS", "Arial Narrow", sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -2.5px !important;
+  text-transform: uppercase !important;
+}
+</style>
+
+<style>
+/* Match homepage hero colors: No.1 + No.2 */
+.hero h1 {
+  color: #F1F3F5 !important;
+}
+
+.hero h1 span {
+  color: #F4B942 !important;
+}
+</style>
+
+<style>
+/* Match homepage hero copy colors exactly */
+.hero-copy {
+  color: #A9B0B7 !important;
+}
+
+.hero-copy strong {
+  color: #E3E7EA !important;
+  font-weight: 700 !important;
+}
+
+.hero-code {
+  color: #F4B942 !important;
+}
+</style>
+
+<style>
+/* Final hero copy match */
+.hero .hero-description {
+  color: #A9B0B7 !important;
+}
+
+.hero .hero-description strong {
+  color: #E3E7EA !important;
+  font-weight: 700 !important;
+}
+</style>
