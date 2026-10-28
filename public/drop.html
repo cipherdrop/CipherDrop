@@ -11,11 +11,11 @@
     * { box-sizing: border-box; }
 
     :root {
-      --bg: #020403;
-      --panel: #050806;
-      --green: #63d471;
-      --green-soft: #45b956;
-      --green-dim: #267a35;
+      --bg: #0b0f14;
+      --panel: #111827;
+      --green: #F0A94B;
+      --green-soft: #FFD18A;
+      --green-dim: #334155;
       --line: rgba(0,255,65,.28);
       --line-soft: rgba(0,255,65,.12);
       --text: #eef5f0;
@@ -545,7 +545,492 @@
         flex-direction: column;
       }
     }
-  </style>
+  
+/* CIPHERDROP READABILITY FIX V2 */
+html, body {
+  background: #080b10 !important;
+  color: #f8fafc !important;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  line-height: 1.65 !important;
+}
+p, li, label, small, input, textarea, select {
+  color: #e2e8f0 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  opacity: 1 !important;
+}
+h1, h2, h3, h4, strong, b, legend {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+code, pre, .mono, .address, .memo {
+  color: #e2e8f0 !important;
+  overflow-wrap: anywhere;
+}
+section, article, fieldset, .card, .panel, .invoice,
+.payment-card, .drop-card, .surface {
+  background: #101722 !important;
+  border-color: #334155 !important;
+  box-shadow: none !important;
+}
+input, textarea, select {
+  background: #0b1220 !important;
+  border: 1px solid #64748b !important;
+  border-radius: 3px;
+}
+input::placeholder, textarea::placeholder {
+  color: #b6c2d2 !important;
+  opacity: 1 !important;
+}
+a, .green, .status, .amount, .accent {
+  color: #F0A94B !important;
+}
+button, .btn, input[type="submit"], input[type="button"] {
+  background: #F0A94B !important;
+  color: #ffffff !important;
+  border: 1px solid #F0A94B !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-size: 14px !important;
+}
+:focus-visible {
+  outline: 3px solid #FFD18A !important;
+  outline-offset: 3px !important;
+}
+
+
+/* CIPHERDROP WILDCARD OBSIDIAN AMBER */
+html, body {
+  background: #0B0D0F !important;
+  color: #E8EAED !important;
+}
+body {
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  line-height: 1.65 !important;
+}
+h1, h2, h3, h4, strong, b, legend {
+  color: #F5F5F4 !important;
+  opacity: 1 !important;
+}
+p, li, label, small, code, pre {
+  color: #C4CBD3 !important;
+  opacity: 1 !important;
+}
+section, article, fieldset, .card, .panel, .invoice,
+.payment-card, .drop-card, .surface {
+  background: #171A1E !important;
+  background-image: none !important;
+  border-color: #454B53 !important;
+  box-shadow: none !important;
+}
+input, textarea, select {
+  background: #101215 !important;
+  color: #F5F5F4 !important;
+  border: 1px solid #656D77 !important;
+}
+input::placeholder, textarea::placeholder {
+  color: #AEB6C0 !important;
+  opacity: 1 !important;
+}
+a, .green, .status, .amount, .accent {
+  color: #F0A94B !important;
+}
+button, .btn, input[type="submit"], input[type="button"] {
+  background: #F0A94B !important;
+  color: #17120A !important;
+  border: 1px solid #FFD18A !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+}
+button:hover, .btn:hover {
+  background: #FFD18A !important;
+}
+:focus-visible {
+  outline: 3px solid #FFD18A !important;
+  outline-offset: 3px !important;
+}
+body * {
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+/* CIPHERDROP WILDCARD — REMOVE #F0A94B ACCENTS */
+:root {
+  --#F0A94B: #F0A94B;
+  --accent: #F0A94B;
+}
+h1 span, h2 span, h3 span,
+a, .status, .amount, .accent,
+.label, .step-number, .section-label {
+  color: #F0A94B !important;
+}
+header, nav, .topbar {
+  border-color: #454B53 !important;
+}
+.status::before, .status-dot, .dot {
+  background-color: #F0A94B !important;
+  box-shadow: none !important;
+}
+button, .btn, input[type="submit"], input[type="button"] {
+  background: #F0A94B !important;
+  border-color: #FFD18A !important;
+  color: #17120A !important;
+}
+:focus-visible {
+  outline-color: #FFD18A !important;
+}
+
+
+/* CIPHERDROP — NO #F0A94B */
+html, body { color: #E8EAED !important; }
+h1, h2, h3, h4, strong, b, legend {
+  color: #F5F5F4 !important;
+}
+a, .status, .amount, .accent, .label, .step-number,
+.section-label, .subtitle, .green {
+  color: #F0A94B !important;
+}
+.status::before, .status-dot, .dot {
+  background: #F0A94B !important;
+  box-shadow: none !important;
+}
+button, .btn, input[type="submit"], input[type="button"] {
+  background: #F0A94B !important;
+  border-color: #FFD18A !important;
+  color: #17120A !important;
+}
+input, textarea, select {
+  color: #F5F5F4 !important;
+  border-color: #656D77 !important;
+}
+:focus-visible { outline-color: #FFD18A !important; }
+
+
+/* CIPHERDROP COLORFUL WILDCARD */
+:root {
+  --cd-amber: #FFB84D;
+  --cd-purple: #C084FC;
+  --cd-teal: #5EEAD4;
+  --cd-pink: #FB7185;
+}
+html, body {
+  background: #0B0D12 !important;
+  color: #F5F5F5 !important;
+}
+h1 { color: #F8FAFC !important; }
+h1 span, .amount, .step-number {
+  color: var(--cd-amber) !important;
+}
+a, .accent, .section-label {
+  color: var(--cd-purple) !important;
+}
+.status, .status-dot, .dot {
+  color: var(--cd-teal) !important;
+}
+.status::before, .status-dot, .dot {
+  background-color: var(--cd-teal) !important;
+  box-shadow: none !important;
+}
+button, .btn, input[type="submit"], input[type="button"] {
+  background: linear-gradient(110deg, #FFB84D, #FB7185) !important;
+  color: #17120A !important;
+  border: 1px solid #FFD6A0 !important;
+  box-shadow: none !important;
+}
+section, article, fieldset, .card, .panel, .invoice,
+.payment-card, .drop-card, .surface {
+  background-color: #171A22 !important;
+  border-color: #454052 !important;
+  box-shadow: none !important;
+}
+input, textarea, select {
+  background: #0D1018 !important;
+  color: #F5F5F5 !important;
+  border-color: #75658B !important;
+}
+
+
+/* CIPHERDROP COLORFUL — PURPLE TEAL PINK */
+:root {
+  --cd-purple: #C084FC;
+  --cd-teal: #5EEAD4;
+  --cd-pink: #FB7185;
+}
+html, body {
+  background: #0B0D12 !important;
+  color: #F5F5F5 !important;
+}
+h1, h2, h3, h4, strong, b, legend {
+  color: #F5F5F5 !important;
+}
+h1 span, .amount, .step-number {
+  color: var(--cd-purple) !important;
+}
+a, .accent, .section-label {
+  color: var(--cd-teal) !important;
+}
+.status, .status-dot, .dot {
+  color: var(--cd-pink) !important;
+}
+.status::before, .status-dot, .dot {
+  background-color: var(--cd-pink) !important;
+  box-shadow: none !important;
+}
+button, .btn, input[type="submit"], input[type="button"] {
+  background: linear-gradient(110deg, #C084FC, #FB7185) !important;
+  color: #130D1A !important;
+  border: 1px solid #E9B8FF !important;
+  box-shadow: none !important;
+}
+section, article, fieldset, .card, .panel, .invoice,
+.payment-card, .drop-card, .surface {
+  background-color: #171A22 !important;
+  border-color: #454052 !important;
+  box-shadow: none !important;
+}
+input, textarea, select {
+  background: #0D1018 !important;
+  color: #F5F5F5 !important;
+  border-color: #75658B !important;
+}
+
+
+/* CIPHERDROP RETRO UNDERGROUND THEME */
+:root {
+  color-scheme: dark;
+  --bg: #17110E;
+  --panel: #211812;
+  --green: #D77B43;
+  --green-soft: #E7A16C;
+  --green-dim: #68432F;
+  --text: #F2E7D2;
+  --muted: #D0BEA6;
+  --dim: #A8957E;
+  --danger: #D96B5F;
+}
+html, body {
+  background: #17110E !important;
+  background-image: none !important;
+  color: #F2E7D2 !important;
+  font-family: "Courier New", monospace !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  text-shadow: none !important;
+}
+body {
+  background-image:
+    linear-gradient(#2A1D16 1px, transparent 1px),
+    linear-gradient(90deg, #2A1D16 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+}
+h1, h2, h3, h4 {
+  color: #F2E7D2 !important;
+  font-family: Impact, "Arial Black", sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.035em !important;
+  text-shadow: none !important;
+}
+p, li, label, small, legend, strong, b {
+  color: #D0BEA6 !important;
+  opacity: 1 !important;
+}
+a, .accent, .status, .amount, .step-number,
+.section-label, .subtitle, .green {
+  color: #E7A16C !important;
+}
+section, article, fieldset, .card, .panel, .invoice,
+.payment-card, .drop-card, .surface {
+  background: #211812 !important;
+  background-image: none !important;
+  border: 1px solid #68432F !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+input, textarea, select, pre, code {
+  background: #120D0A !important;
+  color: #F2E7D2 !important;
+  border: 1px solid #68432F !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: "Courier New", monospace !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+input::placeholder, textarea::placeholder {
+  color: #A8957E !important;
+  opacity: 1 !important;
+}
+button, .btn, input[type="submit"], input[type="button"],
+button.primary, a.button {
+  background: #D77B43 !important;
+  color: #17110E !important;
+  border: 2px solid #E7A16C !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-family: "Courier New", monospace !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+}
+button:hover, .btn:hover, a.button:hover {
+  background: #E7A16C !important;
+  color: #17110E !important;
+}
+hr {
+  border-color: #68432F !important;
+}
+:focus-visible {
+  outline: 2px solid #E7A16C !important;
+  outline-offset: 3px !important;
+}
+body * {
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+/* CIPHERDROP RETRO POLISH */
+html, body {
+  background: #17110E !important;
+  background-image: none !important;
+  color: #F2E7D2 !important;
+  font-family: "Courier New", monospace !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+}
+body {
+  background-image:
+    linear-gradient(90deg, rgba(92,57,39,.12) 1px, transparent 1px),
+    linear-gradient(rgba(92,57,39,.12) 1px, transparent 1px) !important;
+  background-size: 32px 32px !important;
+}
+h1, h2, h3, h4 {
+  font-family: "Arial Black", "Segoe UI", sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.02 !important;
+  color: #F2E7D2 !important;
+  text-shadow: none !important;
+  transform: none !important;
+}
+h1 { font-size: clamp(32px, 4vw, 54px) !important; }
+h1 span, h2 span, .amount, .step-number {
+  color: #D77B43 !important;
+}
+p, li, label, small, legend, strong, b {
+  color: #D0BEA6 !important;
+  opacity: 1 !important;
+}
+a, .accent, .status, .section-label, .subtitle, .green,
+[class*="status"], [class*="step"] {
+  color: #D77B43 !important;
+}
+section, article, fieldset, .card, .panel, .invoice,
+.payment-card, .drop-card, .surface {
+  background: #2A1C15 !important;
+  background-image: none !important;
+  border-color: #68432F !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+input, textarea, select, pre, code {
+  background: #120D0A !important;
+  color: #F2E7D2 !important;
+  border: 1px solid #68432F !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: "Courier New", monospace !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  overflow-wrap: anywhere;
+}
+input::placeholder, textarea::placeholder {
+  color: #A8957E !important;
+  opacity: 1 !important;
+}
+button, .btn, input[type="submit"], input[type="button"],
+button.primary, a.button {
+  background: #D77B43 !important;
+  color: #17110E !important;
+  border: 2px solid #E7A16C !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-family: "Courier New", monospace !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+}
+button:hover, .btn:hover, a.button:hover {
+  background: #E7A16C !important;
+  color: #17110E !important;
+}
+hr {
+  border-color: #68432F !important;
+}
+:focus-visible {
+  outline: 2px solid #E7A16C !important;
+  outline-offset: 3px !important;
+}
+body * {
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+/* CIPHERDROP TYPOGRAPHY REFINEMENT */
+html, body {
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  letter-spacing: normal !important;
+}
+h1, h2, h3, h4 {
+  font-family: "Arial Black", "Trebuchet MS", sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.4px !important;
+  line-height: 1.02 !important;
+}
+p, li, label, small, legend, strong, b {
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif !important;
+  letter-spacing: normal !important;
+}
+input, textarea, select {
+  font-family: Consolas, "Courier New", monospace !important;
+  font-size: 14px !important;
+  letter-spacing: 0 !important;
+}
+button, .btn, input[type="submit"], input[type="button"] {
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: .3px !important;
+}
+
+
+/* CIPHERDROP DISPLAY HEADLINE */
+h1 {
+  font-family: "Arial Rounded MT Bold", "Arial Black",
+               "Trebuchet MS", sans-serif !important;
+  font-size: clamp(38px, 4.3vw, 58px) !important;
+  font-weight: 900 !important;
+  letter-spacing: -2.2px !important;
+  line-height: .98 !important;
+  text-transform: uppercase;
+  -webkit-text-stroke: .45px currentColor;
+}
+
+</style>
 </head>
 
 <body>
