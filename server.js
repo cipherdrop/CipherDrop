@@ -1,13 +1,32 @@
 'use strict';
 
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 const { createDrop } = require('./drop');
 const { saveDrop, getDrop } = require('./store');
 const { unlockStoredDrop } = require('./service');
+const { createInvoice } = require('./invoice');
 
 const HOST = '127.0.0.1';
 const PORT = Number(process.env.PORT || 3000);
 const MAX_BODY_BYTES = 64 * 1024;
+const PUBLIC_DIR = path.join(__dirname, 'public');
+
+function sendHtml(res, filename) {
+  fs.readFile(path.join(PUBLIC_DIR, filename), (error, data) => {
+    if (error) {
+      sendJson(res, 500, { error: 'Unable to load page.' });
+      return;
+    }
+
+    res.writeHead(200, {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store'
+    });
+    res.end(data);
+  });
+}
 
 function sendJson(res, status, body) {
   res.writeHead(status, {
@@ -50,6 +69,19 @@ function readJson(req) {
 }
 
 const server = http.createServer(async (req, res) => {
+  if (req.method === 'GET' && req.url === '/') {
+    sendHtml(res, 'index.html');
+    return;
+  }
+
+  if (
+    req.method === 'GET' &&
+    /^\/drop\/[a-f0-9]{32}$/.test(req.url)
+  ) {
+    sendHtml(res, 'drop.html');
+    return;
+  }
+
   if (req.method === 'GET' && req.url === '/api/health') {
     sendJson(res, 200, {
       ok: true,
@@ -77,9 +109,18 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    sendJson(res, 200, {
-      drop
-    });
+    try {
+      const invoice = createInvoice(drop);
+
+      sendJson(res, 200, {
+        drop,
+        invoice
+      });
+    } catch (error) {
+      sendJson(res, 503, {
+        error: error.message
+      });
+    }
     return;
   }
 

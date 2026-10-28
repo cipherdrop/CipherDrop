@@ -9,6 +9,7 @@ let baseUrl;
 
 test.before(async () => {
   process.env.ALLOW_SIMULATED_PAYMENTS = '1';
+  process.env.ZCASH_TESTNET_ADDRESS = 'utest1example';
 
   await new Promise((resolve) => {
     server.listen(0, '127.0.0.1', resolve);

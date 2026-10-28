@@ -3,8 +3,10 @@
 const crypto = require('crypto');
 const { encrypt } = require('./crypto');
 const { toZatoshis } = require('./payment');
+const { getNetwork } = require('./config');
 
 function createDrop({ secret, amount, burnAfterUnlock = true }) {
+  const network = getNetwork();
   if (typeof secret !== 'string' || !secret.trim()) {
     throw new Error('Secret is required.');
   }
@@ -19,6 +21,7 @@ function createDrop({ secret, amount, burnAfterUnlock = true }) {
   return {
     drop: {
       id,
+      network: network.name,
       memo,
       amount: String(amount),
       burnAfterUnlock: Boolean(burnAfterUnlock),
